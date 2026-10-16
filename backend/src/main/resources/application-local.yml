@@ -1,0 +1,21 @@
+# Локална околина од presmetko-infra (docker compose up). Само тест-вредности.
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/presmetko
+    username: app_runtime # без BYPASSRLS, не е сопственик на табелите
+    password: app_runtime_local
+  flyway:
+    user: presmetko # сопственик на шемата, само за миграции
+    password: presmetko_local
+  mail:
+    host: localhost
+    port: 1025
+
+presmetko:
+  oidc:
+    issuer-uri: http://localhost:8180/realms/presmetko
+  s3:
+    endpoint: http://localhost:9000
+    bucket: presmetko-documents
+    access-key: presmetko
+    secret-key: presmetko_local

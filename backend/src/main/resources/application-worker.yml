@@ -1,0 +1,13 @@
+# Задачи, scheduler, праќање кон УЈП. Единствениот профил со УЈП креденцијали.
+server:
+  port: 8081 # само actuator/health
+
+spring:
+  flyway:
+    enabled: false # миграциите ги извршува api
+
+presmetko:
+  ujp:
+    base-url: ${UJP_BASE_URL:http://localhost:8090}
+    username: ${UJP_USERNAME:}
+    password: ${UJP_PASSWORD:}
